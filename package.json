@@ -1,0 +1,54 @@
+{
+	"author": {
+		"name": "Baptiste Pillot",
+		"email": "baptiste@pillot.fr"
+	},
+	"dependencies": {
+		"@itrocks/class-type": "latest",
+		"@itrocks/class-view": "latest",
+		"@itrocks/property-view": "latest",
+		"@itrocks/reflect": "latest",
+		"@itrocks/rename": "latest",
+		"@itrocks/request-response": "latest",
+		"@itrocks/required": "latest",
+		"@itrocks/store": "latest",
+		"@itrocks/transformer": "latest",
+		"@itrocks/translate": "latest"
+	},
+	"description": "File object with it.rocks transformers for form and data handling",
+	"devDependencies": {
+		"sass": "^1.83",
+		"typescript": "~5.8"
+	},
+	"engines": {
+		"node": ">=18"
+	},
+	"exports": "./cjs/file.js",
+	"homepage": "https://it.rocks",
+	"files": [
+		"config.yaml",
+		"LICENSE",
+		"README.md",
+		"cjs/*",
+		"css/*",
+		"!*.map"
+	],
+	"keywords": [
+		"backend",
+		"file",
+		"front-end",
+		"it.rocks"
+	],
+	"license": "ISC",
+	"name": "@itrocks/file",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/itrocks-ts/file.git"
+	},
+	"scripts": {
+		"build": "tsc",
+		"build:css": "sass --no-source-map src:css"
+	},
+	"types": "./cjs/file.d.ts",
+	"version": "0.0.1"
+}
