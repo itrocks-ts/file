@@ -17,8 +17,8 @@
 	},
 	"description": "File object with it.rocks transformers for form and data handling",
 	"devDependencies": {
-		"sass": "^1.83",
-		"typescript": "~5.8"
+		"sass": "^1.95",
+		"typescript": "~5.9"
 	},
 	"engines": {
 		"node": ">=18"
@@ -50,5 +50,5 @@
 		"build:css": "sass --no-source-map src:css"
 	},
 	"types": "./cjs/file.d.ts",
-	"version": "0.0.1"
+	"version": "0.0.2"
 }
