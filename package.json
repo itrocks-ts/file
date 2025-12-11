@@ -35,9 +35,19 @@
 	],
 	"keywords": [
 		"backend",
+		"component",
 		"file",
+		"file-upload",
+		"form",
 		"front-end",
-		"it.rocks"
+		"html",
+		"it.rocks",
+		"transformer",
+		"UI",
+		"upload",
+		"UX",
+		"view",
+		"widget"
 	],
 	"license": "ISC",
 	"name": "@itrocks/file",
@@ -50,5 +60,5 @@
 		"build:css": "sass --no-source-map src:css"
 	},
 	"types": "./cjs/file.d.ts",
-	"version": "0.0.2"
+	"version": "0.0.3"
 }
