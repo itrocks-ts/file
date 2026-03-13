@@ -18,7 +18,7 @@ export class File
 
 }
 
-class ReflectClassHasFileProperty extends ReflectClass
+class ReflectClassHasFileProperty<T extends object> extends ReflectClass<T>
 {
 
 	hasFileProperty()

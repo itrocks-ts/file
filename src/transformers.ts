@@ -1,4 +1,3 @@
-import { KeyOf }                       from '@itrocks/class-type'
 import { ObjectOrType }                from '@itrocks/class-type'
 import { displayOf }                   from '@itrocks/property-view'
 import { toCssId, toField }            from '@itrocks/rename'
@@ -8,7 +7,7 @@ import { setPropertyTypeTransformers } from '@itrocks/transformer'
 import { tr }                          from '@itrocks/translate'
 import { File }                        from './file'
 
-function fileEdit<T extends object>(value: File | undefined, target: ObjectOrType<T>, property: KeyOf<T>)
+function fileEdit<T extends object>(value: File | undefined, target: ObjectOrType<T>, property: keyof T)
 {
 	const fieldId   = toCssId(property)
 	const fieldName = toField(property)
@@ -25,7 +24,7 @@ function fileInput(requestFile: RequestFile): File
 	return file
 }
 
-function fileOutput<T extends object>(value: File | undefined, target: ObjectOrType<T>, property: KeyOf<T>)
+function fileOutput<T extends object>(value: File | undefined, target: ObjectOrType<T>, property: keyof T)
 {
 	return value ? value.toString() : ''
 }
