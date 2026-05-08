@@ -17,20 +17,17 @@
 	},
 	"description": "File object with it.rocks transformers for form and data handling",
 	"devDependencies": {
-		"sass": "^1.95",
-		"typescript": "~5.9"
+		"typescript": "^6.0"
 	},
 	"engines": {
-		"node": ">=18"
+		"node": ">=24"
 	},
 	"exports": "./cjs/file.js",
 	"homepage": "https://it.rocks",
 	"files": [
-		"config.yaml",
 		"LICENSE",
 		"README.md",
-		"cjs/*",
-		"css/*",
+		"cjs",
 		"!*.map"
 	],
 	"keywords": [
@@ -56,9 +53,7 @@
 		"url": "git+https://github.com/itrocks-ts/file.git"
 	},
 	"scripts": {
-		"build": "tsc",
-		"build:css": "sass --no-source-map src:css"
+		"build": "tsc"
 	},
-	"types": "./cjs/file.d.ts",
-	"version": "0.2.0"
+	"version": "0.2.1"
 }
