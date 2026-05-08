@@ -17,6 +17,7 @@
 	},
 	"description": "File object with it.rocks transformers for form and data handling",
 	"devDependencies": {
+		"@types/node": "^24.10",
 		"typescript": "^6.0"
 	},
 	"engines": {
@@ -55,5 +56,5 @@
 	"scripts": {
 		"build": "tsc"
 	},
-	"version": "0.2.1"
+	"version": "0.2.2"
 }
