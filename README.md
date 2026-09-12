@@ -109,7 +109,8 @@ function renderFileField<T extends object>(
 
 `FileStorage` is the storage port for opaque binary objects. Its contract exposes
 `cleanup`, `write`, `read`, `delete`, `has` and `references`; callers never receive a filesystem
-path. Bind an implementation once during application startup:
+path. `read(reference, start?, end?)` optionally reads an inclusive byte range without loading the
+whole object. Bind an implementation once during application startup:
 
 ```ts
 import { LocalFileStorage } from '@itrocks/file'

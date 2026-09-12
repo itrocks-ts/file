@@ -22,7 +22,7 @@ export abstract class FileStorage
 
 	abstract has(reference: string): Promise<boolean>
 
-	abstract read(reference: string): Promise<Buffer>
+	abstract read(reference: string, start?: number, end?: number): Promise<Buffer>
 
 	abstract references(): Promise<string[]>
 
@@ -71,9 +71,29 @@ export class LocalFileStorage extends FileStorage
 		}
 	}
 
-	async read(reference: string): Promise<Buffer>
+	async read(reference: string, start?: number, end?: number): Promise<Buffer>
 	{
-		return readFile(this.path(reference))
+		const path = this.path(reference)
+		if ((start === undefined) && (end === undefined)) return readFile(path)
+		if (
+			(start === undefined)
+			|| (end === undefined)
+			|| !Number.isSafeInteger(start)
+			|| !Number.isSafeInteger(end)
+			|| (start < 0)
+			|| (start > end)
+		) throw new Error('Invalid file byte range')
+		const length = end - start + 1
+		const buffer = Buffer.allocUnsafe(length)
+		const file   = await open(path, 'r')
+		try {
+			const { bytesRead } = await file.read(buffer, 0, length, start)
+			if (bytesRead !== length) throw new Error('File byte range exceeds content')
+			return buffer
+		}
+		finally {
+			await file.close()
+		}
 	}
 
 	async references(): Promise<string[]>
