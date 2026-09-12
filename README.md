@@ -21,8 +21,8 @@ npm i @itrocks/file
 ## Usage
 
 `@itrocks/file` provides a `File` class that represents an uploaded file,
-plus a set of transformers that integrate file properties into the
-`@itrocks/*` form and view system.
+a storage port with a local-filesystem implementation, plus transformers that
+integrate file properties into the `@itrocks/*` form and view system.
 
 In practice you:
 
@@ -104,6 +104,27 @@ function renderFileField<T extends object>(
 ```
 
 ## API
+
+### File storage
+
+`FileStorage` is the storage port for opaque binary objects. Its contract exposes
+`cleanup`, `write`, `read`, `delete`, `has` and `references`; callers never receive a filesystem
+path. Bind an implementation once during application startup:
+
+```ts
+import { LocalFileStorage } from '@itrocks/file'
+import { setFileStorage }   from '@itrocks/file'
+
+setFileStorage(new LocalFileStorage('/srv/application/media'))
+```
+
+`LocalFileStorage` creates private files atomically without overwriting with random 192-bit
+base64url references. It rejects every caller-supplied reference that does not match the
+opaque reference format, so filenames and path traversal input never become storage paths.
+Call `cleanup()` during startup to remove temporary files left by an interrupted write.
+
+Use `fileStorage()` from domain or application code after startup binding. Another
+implementation can extend `FileStorage` without changing callers.
 
 ### `class File`
 

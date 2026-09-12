@@ -5,7 +5,12 @@ import { ReflectClass }   from '@itrocks/reflect'
 import { Required }       from '@itrocks/required'
 import { Store }          from '@itrocks/store'
 
-export * from './transformers'
+export { FileStorage }              from './storage'
+export { LocalFileStorage }         from './storage'
+export { fileStorage }              from './storage'
+export { setFileStorage }           from './storage'
+export { initFileHtmlTransformers } from './transformers'
+export { initFileTransformers }     from './transformers'
 
 @Representative('name') @Store()
 export class File

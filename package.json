@@ -54,7 +54,8 @@
 		"url": "git+https://github.com/itrocks-ts/file.git"
 	},
 	"scripts": {
-		"build": "tsc"
+		"build": "tsc",
+		"test": "npm run build && node --test test/*.test.mjs"
 	},
 	"version": "0.2.3"
 }
