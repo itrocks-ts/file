@@ -6,14 +6,12 @@
 	"dependencies": {
 		"@itrocks/class-type": "latest",
 		"@itrocks/class-view": "latest",
-		"@itrocks/property-view": "latest",
+		"@itrocks/form-controls": "latest",
 		"@itrocks/reflect": "latest",
-		"@itrocks/rename": "latest",
 		"@itrocks/request-response": "latest",
 		"@itrocks/required": "latest",
 		"@itrocks/store": "latest",
-		"@itrocks/transformer": "latest",
-		"@itrocks/translate": "latest"
+		"@itrocks/transformer": "latest"
 	},
 	"description": "File object with it.rocks transformers for form and data handling",
 	"devDependencies": {
@@ -57,5 +55,5 @@
 		"build": "tsc",
 		"test": "npm run build && node --test test/*.test.mjs"
 	},
-	"version": "0.3.0"
+	"version": "0.3.1"
 }
